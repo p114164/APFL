@@ -47,7 +47,7 @@ class client(object):
         for var in global_parameters_dec:
             global_parameters_dec[var] = np.array(global_parameters_dec[var]).reshape(Net.state_dict()[var].shape)
             global_parameters_dec[var] = torch.tensor(global_parameters_dec[var], dtype=torch.float32, device=torch.device('cuda'))  # 在GPU上
-        print("解密完成")
+        print("解密完成,开始本地训练")
         # 加载当前通信中最新全局参数
         # 传入网络模型，并加载global_parameters参数的
         Net.load_state_dict(global_parameters_dec, strict=True)
