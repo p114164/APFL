@@ -295,7 +295,7 @@ if __name__ == "__main__":
             global_parameters_dec[var] = np.array(global_parameters_dec[var]).reshape(net.state_dict()[var].shape)
             global_parameters_dec[var] = torch.tensor(global_parameters_dec[var], dtype=torch.float32,
                                                       device=torch.device('cuda'))  # 在GPU上
-        print("全局模型解密完成")
+        print("全局模型解密完成,开始测试并记录全局模型准确率")
 
         sum_accu = 0
         num = 0
